@@ -132,12 +132,29 @@ img {
    font-weight: 500;
 }
 
+.nav-item {
+   position: relative;
+}
+
 .nav-link {
    display: block;
    padding-top: 32px;
    padding-bottom: 32px;
 
    color: var(--title-text-color);
+}
+
+.nav-link.current::after {
+   content: "";
+   position: absolute;
+   left: 0;
+   bottom: 0;
+
+   width: 100%;
+   height: 4px;
+
+   background-color: var(--accent-color);
+   border-radius: 2px;
 }
 
 .header-contacts-list {
@@ -574,11 +591,6 @@ img {
 }
 
 /* modal */
-.is-hidden {
-   visibility: hidden;
-   opacity: 0;
-   pointer-events: none;
-}
 
 .backdrop {
    position: fixed;
@@ -589,6 +601,12 @@ img {
    height: 100%;
 
    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.backdrop.is-hidden {
+   visibility: hidden;
+   opacity: 0;
+   pointer-events: none;
 }
 
 .modal {
